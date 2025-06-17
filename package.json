@@ -1,0 +1,34 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "A GitHub profile README generator with live preview",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeonkim1213/readme-generator.git"
+  },
+  "keywords": ["readme", "github", "profile", "generator"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeonkim1213/readme-generator/issues"
+  },
+  "homepage": "https://github.com/yeonkim1213/readme-generator#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.1",
+    "@vitejs/plugin-react": "^3.1.0",
+    "marked": "^4.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^4.2.1"
+  }
+}
