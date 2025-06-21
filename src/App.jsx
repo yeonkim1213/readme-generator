@@ -16,6 +16,7 @@ function App() {
     helpWith: '',
     askMeAbout: '',
     email: '',
+    pronouns: '',
     funFact: '',
     skills: [],
     projects: [],
@@ -69,6 +70,7 @@ function App() {
       helpWith,
       askMeAbout,
       email,
+      pronouns,
       funFact,
       skills,
       projects,
@@ -91,11 +93,12 @@ function App() {
 ## 👨‍💻 About Me
 ${about ? `- ${about}\n` : ''}
 ${workingOn ? `- 🔭 I'm currently working on **${workingOn}**\n` : ''}
-${learning ? `- 🌱 I'm learning **${learning}**\n` : ''}
+${learning ? `- 🌱 I'm currently learning **${learning}**\n` : ''}
 ${collaborating ? `- 👯 I'm looking to collaborate on **${collaborating}**\n` : ''}
-${helpWith ? `- 🤔 I'm seeking help with **${helpWith}**\n` : ''}
+${helpWith ? `- 🤔 I'm looking for help with **${helpWith}**\n` : ''}
 ${askMeAbout ? `- 💬 Ask me about **${askMeAbout}**\n` : ''}
 ${email ? `- 📫 How to reach me: [${email}](mailto:${email})\n` : ''}
+${pronouns ? `- 😄 Pronouns: ${pronouns}\n` : ''}
 ${funFact ? `- ⚡ Fun fact: ${funFact}\n` : ''}
 
 ---

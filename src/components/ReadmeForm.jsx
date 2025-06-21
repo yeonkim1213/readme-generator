@@ -127,46 +127,60 @@ function ReadmeForm({
         fullWidth
       />
       <TextField
-        label="Currently Working On"
+        label="🔭 Currently Working On"
         value={formData.workingOn}
         onChange={(e) => onFormChange('workingOn', e.target.value)}
         fullWidth
+        placeholder="e.g., A React project, Learning TypeScript"
       />
       <TextField
-        label="Learning"
+        label="🌱 Currently Learning"
         value={formData.learning}
         onChange={(e) => onFormChange('learning', e.target.value)}
         fullWidth
+        placeholder="e.g., React Native, GraphQL"
       />
       <TextField
-        label="Looking to Collaborate On"
+        label="👯 Looking to Collaborate On"
         value={formData.collaborating}
         onChange={(e) => onFormChange('collaborating', e.target.value)}
         fullWidth
+        placeholder="e.g., Open source projects, CLI tools"
       />
       <TextField
-        label="Seeking Help With"
+        label="🤔 Looking for Help With"
         value={formData.helpWith}
         onChange={(e) => onFormChange('helpWith', e.target.value)}
         fullWidth
+        placeholder="e.g., TypeScript performance tuning"
       />
       <TextField
-        label="Ask Me About"
+        label="💬 Ask Me About"
         value={formData.askMeAbout}
         onChange={(e) => onFormChange('askMeAbout', e.target.value)}
         fullWidth
+        placeholder="e.g., JavaScript, UI/UX, cybersecurity"
       />
       <TextField
-        label="Email"
+        label="📫 How to Reach Me"
         value={formData.email}
         onChange={(e) => onFormChange('email', e.target.value)}
         fullWidth
+        placeholder="e.g., youremail@example.com"
       />
       <TextField
-        label="Fun Fact"
+        label="😄 Pronouns"
+        value={formData.pronouns}
+        onChange={(e) => onFormChange('pronouns', e.target.value)}
+        fullWidth
+        placeholder="e.g., he/him, she/her, they/them"
+      />
+      <TextField
+        label="⚡ Fun Fact"
         value={formData.funFact}
         onChange={(e) => onFormChange('funFact', e.target.value)}
         fullWidth
+        placeholder="e.g., I can solve a Rubik's cube in under 2 minutes!"
       />
 
       <Typography variant="h5" gutterBottom>
