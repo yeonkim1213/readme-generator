@@ -1,8 +1,21 @@
 import React from 'react';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, Button } from '@mui/material';
 import { marked } from 'marked';
+import DownloadIcon from '@mui/icons-material/Download';
 
 function ReadmePreview({ markdown }) {
+  const handleDownload = () => {
+    const blob = new Blob([markdown], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'README.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <Box>
       <Typography variant="h5" gutterBottom>
@@ -48,6 +61,17 @@ function ReadmePreview({ markdown }) {
           }}
         />
       </Paper>
+      <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant="contained"
+          startIcon={<DownloadIcon />}
+          onClick={handleDownload}
+          size="large"
+          sx={{ minWidth: 200 }}
+        >
+          Download README.md
+        </Button>
+      </Box>
     </Box>
   );
 }
