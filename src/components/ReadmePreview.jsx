@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Paper, Typography, Button } from '@mui/material';
 import { marked } from 'marked';
 import DownloadIcon from '@mui/icons-material/Download';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function ReadmePreview({ markdown }) {
   const handleDownload = () => {
@@ -14,6 +15,19 @@ function ReadmePreview({ markdown }) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(markdown);
+    } catch (err) {
+      const textArea = document.createElement('textarea');
+      textArea.value = markdown;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
@@ -61,7 +75,17 @@ function ReadmePreview({ markdown }) {
           }}
         />
       </Paper>
-      <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
+       
+        <Button
+          variant="outlined"
+          startIcon={<ContentCopyIcon />}
+          onClick={handleCopy}
+          size="large"
+          sx={{ minWidth: 200 }}
+        >
+          Copy README.md
+        </Button>
         <Button
           variant="contained"
           startIcon={<DownloadIcon />}
